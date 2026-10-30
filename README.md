@@ -42,4 +42,3 @@ Ensure all these files are collected within your development workspace root:
 2. **Add Profiles:** Fill in the *Name*, *Unique Code* (e.g., `el`, `en`), and your explicit *Target Prompt*, then click **Add Language**.
 3. **Edit Profiles:** Click **Edit** next to any configured language entry. The form layout will dynamically adjust to **Update Mode**, locking the unique code parameter while allowing you to refine your prompt directives. Click **Update Language** to save your modifications or hit **Cancel** to abort.
 4. Select your target profile as the **Active Language**, save, and right-click on any YouTube hyperlink to pass your payloads to Gemini!
-**Note:**  In order to receive the answer in a certain language, the prompt must indicate the language of the response e.g. for English the prompt must be "Reply in English, what does this video say:", while for Greek the prompt must be "Απάντησε στα ελληνικά τι λέει το βίντεο:".
