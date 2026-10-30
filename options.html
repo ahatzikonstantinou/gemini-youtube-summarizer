@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Extension Options</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; background: #f9f9f9; color: #333; }
+    h2 { border-bottom: 2px solid #ddd; padding-bottom: 8px; }
+    .section { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; }
+    .form-group { margin-bottom: 12px; }
+    label { display: block; font-weight: bold; margin-bottom: 5px; }
+    select, input, textarea { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 14px; }
+    textarea { height: 80px; resize: vertical; }
+    button { background: #1a73e8; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: bold; margin-right: 5px; }
+    button:hover { background: #1557b0; }
+    .lang-item { border-left: 4px solid #1a73e8; background: #f1f3f4; padding: 10px; margin-bottom: 10px; border-radius: 0 4px 4px 0; position: relative; }
+    .btn-container { position: absolute; right: 10px; top: 10px; }
+    .edit-btn { background: #f4b400; font-size: 12px; padding: 4px 8px; }
+    .edit-btn:hover { background: #c59100; }
+    .remove-btn { background: #d93025; font-size: 12px; padding: 4px 8px; }
+    .remove-btn:hover { background: #b31412; }
+    .cancel-btn { background: #5f6368; }
+    .cancel-btn:hover { background: #4a4d51; }
+    .status { color: green; font-weight: bold; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <h2>Gemini Extension Settings</h2>
+
+  <div class="section">
+    <div class="form-group">
+      <label for="activeLanguage">Select Active Language for Prompts:</label>
+      <select id="activeLanguage"></select>
+    </div>
+    <button id="saveActive">Save Active Language</button>
+    <div id="status" class="status"></div>
+  </div>
+
+  <div class="section">
+    <h3 id="formTitle">Add a New Language</h3>
+    <!-- Hidden input to track if we are editing an existing language -->
+    <input type="hidden" id="editingCode" value="">
+    
+    <div class="form-group">
+      <label for="newLangName">Language Name (e.g., Greek, Spanish):</label>
+      <input type="text" id="newLangName" placeholder="English">
+    </div>
+    <div class="form-group">
+      <label for="newLangCode">Language Code (Unique token, e.g., el, es):</label>
+      <input type="text" id="newLangCode" placeholder="en">
+    </div>
+    <div class="form-group">
+      <label for="newLangPrompt">Custom Gemini Prompt for this language:</label>
+      <textarea id="newLangPrompt" placeholder="Summarize what this video says:"></textarea>
+    </div>
+    <button id="addLanguage">➕ Add Language</button>
+    <button id="cancelEdit" class="cancel-btn" style="display: none;">Cancel</button>
+  </div>
+
+  <div class="section">
+    <h3>Configured Languages</h3>
+    <div id="languageList"></div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
